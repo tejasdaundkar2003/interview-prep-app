@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Question</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">Edit Question</h1>
+    <form action="#" th:action="@{/questions/edit/{id}(id=${question.id})}" th:object="${question}" method="post">
+        <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" th:field="*{companyName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="jobRole">Job Role</label>
+            <input type="text" id="jobRole" th:field="*{jobRole}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="questionText">Question</label>
+            <textarea id="questionText" th:field="*{questionText}" class="form-control" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Question</button>
+    </form>
+</div>
+</body>
+</html>
